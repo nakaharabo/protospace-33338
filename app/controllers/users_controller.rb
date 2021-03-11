@@ -3,5 +3,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @name = user.name
     @prototype = user
+    @prototypes = user.prototypes
   end
 end
