@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= "プロトタイプのタイトル"%>
+        <%= @prototype.title %>
       </p>
       
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
@@ -50,11 +50,10 @@
        
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <li class="comments_list">
-              <% @comments.each do |comment| %>
-              <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %><br />
-              <%= comment.text %>
-            
+           
+              <% @comments.each do |comment| %></li>
+              <li class="comments_list"><%= link_to comment.user.name, user_path(comment.user), class: :comment_user %></li>
+              <li class="comments_list"><%= comment.text %>
             </li>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
