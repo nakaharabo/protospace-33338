@@ -47,14 +47,14 @@
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong> 
          <% end %> 
         <%# // ログインしているユーザーには上記を表示する %>
-        <% if user_signed_in? %>
+       
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <li class="comments_list">
               <% @comments.each do |comment| %>
               <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %><br />
               <%= comment.text %>
-              <% end %>
+            
             </li>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
